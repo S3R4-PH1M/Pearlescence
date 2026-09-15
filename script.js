@@ -41,4 +41,29 @@
 
   card.addEventListener('pointerleave', reset);
 
+  let idlePhase = 0;
+  let isPointerOverCard = false;
+
+  
+  card.addEventListener('pointerenter', () => { isPointerOverCard = true; });
+  card.addEventListener('pointerleave', () => { isPointerOverCard = false; });
+
+  const idleLoop = () => {
+      if (!isPointerOverCard) {
+        idlePhase += 0.006;
+        const pointerX = 50 + Math.sin(idlePhase) * 18;
+        const pointerY = 50 + Math.cos(idlePhase * 0.8) * 14;
+        const tiltY = Math.sin(idlePhase) * 6;
+        const tiltX = Math.cos(idlePhase * 0.8) * -6;
+        card.style.setProperty('--pointer-x', `${pointerX}%`);
+        card.style.setProperty('--pointer-y', `${pointerY}%`);
+        card.style.setProperty('--tilt-x', `${tiltX}deg`);
+        card.style.setProperty('--tilt-y', `${tiltY}deg`);
+        card.style.setProperty('--glow-intensity', '0.55');
+      }
+      requestAnimationFrame(idleLoop);
+    };
+    requestAnimationFrame(idleLoop);
+
+
 })();
