@@ -146,7 +146,7 @@ header {
 
 .btn--primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(73, 209, 255, 0.25);
+  box-shadow: 0 10px 30px rgba(73, 255, 128, 0.25);
 }
 
 .btn--primary:active {
@@ -224,6 +224,21 @@ header {
   mix-blend-mode: color-dodge;
   opacity: calc(0.4 + var(--glow-intensity) * 0.45);
   transition: opacity 0.25s ease-out;
+  pointer-events: none;
+}
+
+.card__glare {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at var(--pointer-x) var(--pointer-y),
+      rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.2) 18%, transparent 40%),
+    radial-gradient(circle at calc(var(--pointer-x) + 6%) calc(var(--pointer-y) - 4%),
+      var(--neon-blue) 0%, transparent 22%),
+    radial-gradient(circle at calc(var(--pointer-x) - 5%) calc(var(--pointer-y) + 5%),
+      var(--neon-pink) 0%, transparent 20%);
+  mix-blend-mode: overlay, screen, screen;
+  opacity: calc(0.45 + var(--glow-intensity) * 0.55);
   pointer-events: none;
 }
 
