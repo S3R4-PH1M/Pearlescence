@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pearlescence - Holographic Effect</title>
+<meta name="description" content="Pearlescence is a pointer-reactive holographic card interaction built with plain CSS and JavaScript.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/@phosphor-icons/web" defer></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-layer" aria-hidden="true">
+        <div class="aurora"></div>
+        <div class="grid-floor"></div>
+        <div class="particles" id="particles"></div>
+    </div>
+
+  <header>
+    <a class="wordmark" href="#top">Pearlescence</a>
+    <a class="nav-link" href="#features">How it works</a>
+  </header>
+  <main>
+    <section class="hero" id="top">
+      <div class="hero__content">
+        <h1 class="hero__title">Light that follows your <span class="accent">cursor</span>.</h1>
+        <p class="hero__subtext">Pearlescence is a pointer-reactive holographic card built with plain CSS and JavaScript. Tilt, glare, and foil respond in real time.</p>
+        <a class="btn btn--primary" href="#features">How it works</a>
+      </div>
+
+      <div class="hero__visual">
+        <div class="card" id="card">
+          <div class="card__border"></div>
+          <div class="card__opal"></div>
+          <div class="card__foil"></div>
+          <div class="card__glare"></div>
+          <div class="card__content">
+            <h2 class="card__title">Pearlescence</h2>
+            <p class="card__desc">An animated holographic surface that reacts to light, tilt, and pointer motion.</p>
+            <div class="card__footer">
+              <span class="card__tag">Pearlescent</span>
+              <span class="card__tag">Reactive</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features" id="features">
+      <h2 class="features__title">How it works</h2>
+      <div class="features__grid">
+        <div class="feature feature--lead">
+          <i class="ph ph-cursor-click feature__icon" aria-hidden="true"></i>
+          <h3>Feature 3</h3>
+          <p>Details</p>
+        </div>
+        <div class="feature">
+          <i class="ph ph-moon-stars feature__icon" aria-hidden="true"></i>
+          <h3>Feature 2</h3>
+          <p>Details</p>
+        </div>
+        <div class="feature">
+          <i class="ph ph-eye feature__icon" aria-hidden="true"></i>
+          <h3>Feature 3</h3>
+          <p>Details</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Pearlescence. A small study of interactive light.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
